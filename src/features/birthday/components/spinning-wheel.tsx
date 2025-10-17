@@ -80,7 +80,7 @@ export function SpinningWheel() {
               }}
             >
               <defs>
-                {PRIZES.map((prize, index) => (
+                {PRIZES.map((_, index) => (
                   <linearGradient key={`grad-${index}`} id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor={`var(--gradient-${index}-from)`} />
                     <stop offset="100%" stopColor={`var(--gradient-${index}-to)`} />

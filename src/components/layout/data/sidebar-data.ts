@@ -1,10 +1,6 @@
 import {
   LayoutDashboard,
   Heart,
-  Image,
-  Laugh,
-  Music2,
-  Target,
   Mail,
   Cake,
   Sparkles,

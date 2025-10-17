@@ -12,7 +12,7 @@ export function Sparkler() {
   const [isLit, setIsLit] = useState(false)
   const [sparks, setSparks] = useState<Spark[]>([])
   const [trailPoints, setTrailPoints] = useState<{x: number, y: number}[]>([])
-  const timerRef = useRef<NodeJS.Timeout>()
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   const light = () => {
     setIsLit(true)

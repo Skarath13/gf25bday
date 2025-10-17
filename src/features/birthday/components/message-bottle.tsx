@@ -12,7 +12,7 @@ const BOTTLES = [
 
 export function MessageBottle() {
   const [openedBottle, setOpenedBottle] = useState<number | null>(null)
-  const [floatingBottles, setFloatingBottles] = useState(BOTTLES)
+  const [floatingBottles] = useState(BOTTLES)
 
   const openBottle = (id: number) => {
     setOpenedBottle(id)

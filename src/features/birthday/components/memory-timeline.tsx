@@ -74,7 +74,7 @@ export function MemoryTimeline() {
 
           {/* Memories */}
           <div className="space-y-6">
-            {MEMORIES.map((memory, index) => (
+            {MEMORIES.map((memory) => (
               <button
                 key={memory.id}
                 onClick={() => setSelectedMemory(memory)}
