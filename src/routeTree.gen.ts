@@ -28,7 +28,14 @@ import { Route as AuthenticatedSettingsRouteRouteImport } from './routes/_authen
 import { Route as AuthenticatedUsersIndexRouteImport } from './routes/_authenticated/users/index'
 import { Route as AuthenticatedTasksIndexRouteImport } from './routes/_authenticated/tasks/index'
 import { Route as AuthenticatedSettingsIndexRouteImport } from './routes/_authenticated/settings/index'
+import { Route as AuthenticatedPlaylistIndexRouteImport } from './routes/_authenticated/playlist/index'
+import { Route as AuthenticatedMessageIndexRouteImport } from './routes/_authenticated/message/index'
+import { Route as AuthenticatedMemoriesIndexRouteImport } from './routes/_authenticated/memories/index'
+import { Route as AuthenticatedLoveNotesIndexRouteImport } from './routes/_authenticated/love-notes/index'
+import { Route as AuthenticatedInteractiveIndexRouteImport } from './routes/_authenticated/interactive/index'
+import { Route as AuthenticatedInsideJokesIndexRouteImport } from './routes/_authenticated/inside-jokes/index'
 import { Route as AuthenticatedHelpCenterIndexRouteImport } from './routes/_authenticated/help-center/index'
+import { Route as AuthenticatedFuturePlansIndexRouteImport } from './routes/_authenticated/future-plans/index'
 import { Route as AuthenticatedChatsIndexRouteImport } from './routes/_authenticated/chats/index'
 import { Route as AuthenticatedAppsIndexRouteImport } from './routes/_authenticated/apps/index'
 import { Route as ClerkAuthenticatedUserManagementRouteImport } from './routes/clerk/_authenticated/user-management'
@@ -134,10 +141,52 @@ const AuthenticatedSettingsIndexRoute =
     path: '/',
     getParentRoute: () => AuthenticatedSettingsRouteRoute,
   } as any)
+const AuthenticatedPlaylistIndexRoute =
+  AuthenticatedPlaylistIndexRouteImport.update({
+    id: '/playlist/',
+    path: '/playlist/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedMessageIndexRoute =
+  AuthenticatedMessageIndexRouteImport.update({
+    id: '/message/',
+    path: '/message/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedMemoriesIndexRoute =
+  AuthenticatedMemoriesIndexRouteImport.update({
+    id: '/memories/',
+    path: '/memories/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedLoveNotesIndexRoute =
+  AuthenticatedLoveNotesIndexRouteImport.update({
+    id: '/love-notes/',
+    path: '/love-notes/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedInteractiveIndexRoute =
+  AuthenticatedInteractiveIndexRouteImport.update({
+    id: '/interactive/',
+    path: '/interactive/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedInsideJokesIndexRoute =
+  AuthenticatedInsideJokesIndexRouteImport.update({
+    id: '/inside-jokes/',
+    path: '/inside-jokes/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 const AuthenticatedHelpCenterIndexRoute =
   AuthenticatedHelpCenterIndexRouteImport.update({
     id: '/help-center/',
     path: '/help-center/',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
+const AuthenticatedFuturePlansIndexRoute =
+  AuthenticatedFuturePlansIndexRouteImport.update({
+    id: '/future-plans/',
+    path: '/future-plans/',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
 const AuthenticatedChatsIndexRoute = AuthenticatedChatsIndexRouteImport.update({
@@ -200,7 +249,6 @@ const AuthenticatedErrorsErrorRoute =
 export interface FileRoutesByFullPath {
   '/clerk': typeof ClerkAuthenticatedRouteRouteWithChildren
   '/settings': typeof AuthenticatedSettingsRouteRouteWithChildren
-  '/clerk/': typeof ClerkauthRouteRouteWithChildren
   '/forgot-password': typeof authForgotPasswordRoute
   '/otp': typeof authOtpRoute
   '/sign-in': typeof authSignInRoute
@@ -222,7 +270,14 @@ export interface FileRoutesByFullPath {
   '/clerk/user-management': typeof ClerkAuthenticatedUserManagementRoute
   '/apps': typeof AuthenticatedAppsIndexRoute
   '/chats': typeof AuthenticatedChatsIndexRoute
+  '/future-plans': typeof AuthenticatedFuturePlansIndexRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexRoute
+  '/inside-jokes': typeof AuthenticatedInsideJokesIndexRoute
+  '/interactive': typeof AuthenticatedInteractiveIndexRoute
+  '/love-notes': typeof AuthenticatedLoveNotesIndexRoute
+  '/memories': typeof AuthenticatedMemoriesIndexRoute
+  '/message': typeof AuthenticatedMessageIndexRoute
+  '/playlist': typeof AuthenticatedPlaylistIndexRoute
   '/settings/': typeof AuthenticatedSettingsIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
   '/users': typeof AuthenticatedUsersIndexRoute
@@ -250,7 +305,14 @@ export interface FileRoutesByTo {
   '/clerk/user-management': typeof ClerkAuthenticatedUserManagementRoute
   '/apps': typeof AuthenticatedAppsIndexRoute
   '/chats': typeof AuthenticatedChatsIndexRoute
+  '/future-plans': typeof AuthenticatedFuturePlansIndexRoute
   '/help-center': typeof AuthenticatedHelpCenterIndexRoute
+  '/inside-jokes': typeof AuthenticatedInsideJokesIndexRoute
+  '/interactive': typeof AuthenticatedInteractiveIndexRoute
+  '/love-notes': typeof AuthenticatedLoveNotesIndexRoute
+  '/memories': typeof AuthenticatedMemoriesIndexRoute
+  '/message': typeof AuthenticatedMessageIndexRoute
+  '/playlist': typeof AuthenticatedPlaylistIndexRoute
   '/settings': typeof AuthenticatedSettingsIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
   '/users': typeof AuthenticatedUsersIndexRoute
@@ -283,7 +345,14 @@ export interface FileRoutesById {
   '/clerk/_authenticated/user-management': typeof ClerkAuthenticatedUserManagementRoute
   '/_authenticated/apps/': typeof AuthenticatedAppsIndexRoute
   '/_authenticated/chats/': typeof AuthenticatedChatsIndexRoute
+  '/_authenticated/future-plans/': typeof AuthenticatedFuturePlansIndexRoute
   '/_authenticated/help-center/': typeof AuthenticatedHelpCenterIndexRoute
+  '/_authenticated/inside-jokes/': typeof AuthenticatedInsideJokesIndexRoute
+  '/_authenticated/interactive/': typeof AuthenticatedInteractiveIndexRoute
+  '/_authenticated/love-notes/': typeof AuthenticatedLoveNotesIndexRoute
+  '/_authenticated/memories/': typeof AuthenticatedMemoriesIndexRoute
+  '/_authenticated/message/': typeof AuthenticatedMessageIndexRoute
+  '/_authenticated/playlist/': typeof AuthenticatedPlaylistIndexRoute
   '/_authenticated/settings/': typeof AuthenticatedSettingsIndexRoute
   '/_authenticated/tasks/': typeof AuthenticatedTasksIndexRoute
   '/_authenticated/users/': typeof AuthenticatedUsersIndexRoute
@@ -293,7 +362,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/clerk'
     | '/settings'
-    | '/clerk/'
     | '/forgot-password'
     | '/otp'
     | '/sign-in'
@@ -315,7 +383,14 @@ export interface FileRouteTypes {
     | '/clerk/user-management'
     | '/apps'
     | '/chats'
+    | '/future-plans'
     | '/help-center'
+    | '/inside-jokes'
+    | '/interactive'
+    | '/love-notes'
+    | '/memories'
+    | '/message'
+    | '/playlist'
     | '/settings/'
     | '/tasks'
     | '/users'
@@ -343,7 +418,14 @@ export interface FileRouteTypes {
     | '/clerk/user-management'
     | '/apps'
     | '/chats'
+    | '/future-plans'
     | '/help-center'
+    | '/inside-jokes'
+    | '/interactive'
+    | '/love-notes'
+    | '/memories'
+    | '/message'
+    | '/playlist'
     | '/settings'
     | '/tasks'
     | '/users'
@@ -375,7 +457,14 @@ export interface FileRouteTypes {
     | '/clerk/_authenticated/user-management'
     | '/_authenticated/apps/'
     | '/_authenticated/chats/'
+    | '/_authenticated/future-plans/'
     | '/_authenticated/help-center/'
+    | '/_authenticated/inside-jokes/'
+    | '/_authenticated/interactive/'
+    | '/_authenticated/love-notes/'
+    | '/_authenticated/memories/'
+    | '/_authenticated/message/'
+    | '/_authenticated/playlist/'
     | '/_authenticated/settings/'
     | '/_authenticated/tasks/'
     | '/_authenticated/users/'
@@ -498,8 +587,8 @@ declare module '@tanstack/react-router' {
     }
     '/clerk/(auth)': {
       id: '/clerk/(auth)'
-      path: '/'
-      fullPath: '/clerk/'
+      path: ''
+      fullPath: '/clerk'
       preLoaderRoute: typeof ClerkauthRouteRouteImport
       parentRoute: typeof ClerkRouteRoute
     }
@@ -531,11 +620,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedSettingsIndexRouteImport
       parentRoute: typeof AuthenticatedSettingsRouteRoute
     }
+    '/_authenticated/playlist/': {
+      id: '/_authenticated/playlist/'
+      path: '/playlist'
+      fullPath: '/playlist'
+      preLoaderRoute: typeof AuthenticatedPlaylistIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/message/': {
+      id: '/_authenticated/message/'
+      path: '/message'
+      fullPath: '/message'
+      preLoaderRoute: typeof AuthenticatedMessageIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/memories/': {
+      id: '/_authenticated/memories/'
+      path: '/memories'
+      fullPath: '/memories'
+      preLoaderRoute: typeof AuthenticatedMemoriesIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/love-notes/': {
+      id: '/_authenticated/love-notes/'
+      path: '/love-notes'
+      fullPath: '/love-notes'
+      preLoaderRoute: typeof AuthenticatedLoveNotesIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/interactive/': {
+      id: '/_authenticated/interactive/'
+      path: '/interactive'
+      fullPath: '/interactive'
+      preLoaderRoute: typeof AuthenticatedInteractiveIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/inside-jokes/': {
+      id: '/_authenticated/inside-jokes/'
+      path: '/inside-jokes'
+      fullPath: '/inside-jokes'
+      preLoaderRoute: typeof AuthenticatedInsideJokesIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/_authenticated/help-center/': {
       id: '/_authenticated/help-center/'
       path: '/help-center'
       fullPath: '/help-center'
       preLoaderRoute: typeof AuthenticatedHelpCenterIndexRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/future-plans/': {
+      id: '/_authenticated/future-plans/'
+      path: '/future-plans'
+      fullPath: '/future-plans'
+      preLoaderRoute: typeof AuthenticatedFuturePlansIndexRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/chats/': {
@@ -640,7 +778,14 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedErrorsErrorRoute: typeof AuthenticatedErrorsErrorRoute
   AuthenticatedAppsIndexRoute: typeof AuthenticatedAppsIndexRoute
   AuthenticatedChatsIndexRoute: typeof AuthenticatedChatsIndexRoute
+  AuthenticatedFuturePlansIndexRoute: typeof AuthenticatedFuturePlansIndexRoute
   AuthenticatedHelpCenterIndexRoute: typeof AuthenticatedHelpCenterIndexRoute
+  AuthenticatedInsideJokesIndexRoute: typeof AuthenticatedInsideJokesIndexRoute
+  AuthenticatedInteractiveIndexRoute: typeof AuthenticatedInteractiveIndexRoute
+  AuthenticatedLoveNotesIndexRoute: typeof AuthenticatedLoveNotesIndexRoute
+  AuthenticatedMemoriesIndexRoute: typeof AuthenticatedMemoriesIndexRoute
+  AuthenticatedMessageIndexRoute: typeof AuthenticatedMessageIndexRoute
+  AuthenticatedPlaylistIndexRoute: typeof AuthenticatedPlaylistIndexRoute
   AuthenticatedTasksIndexRoute: typeof AuthenticatedTasksIndexRoute
   AuthenticatedUsersIndexRoute: typeof AuthenticatedUsersIndexRoute
 }
@@ -651,7 +796,14 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedErrorsErrorRoute: AuthenticatedErrorsErrorRoute,
   AuthenticatedAppsIndexRoute: AuthenticatedAppsIndexRoute,
   AuthenticatedChatsIndexRoute: AuthenticatedChatsIndexRoute,
+  AuthenticatedFuturePlansIndexRoute: AuthenticatedFuturePlansIndexRoute,
   AuthenticatedHelpCenterIndexRoute: AuthenticatedHelpCenterIndexRoute,
+  AuthenticatedInsideJokesIndexRoute: AuthenticatedInsideJokesIndexRoute,
+  AuthenticatedInteractiveIndexRoute: AuthenticatedInteractiveIndexRoute,
+  AuthenticatedLoveNotesIndexRoute: AuthenticatedLoveNotesIndexRoute,
+  AuthenticatedMemoriesIndexRoute: AuthenticatedMemoriesIndexRoute,
+  AuthenticatedMessageIndexRoute: AuthenticatedMessageIndexRoute,
+  AuthenticatedPlaylistIndexRoute: AuthenticatedPlaylistIndexRoute,
   AuthenticatedTasksIndexRoute: AuthenticatedTasksIndexRoute,
   AuthenticatedUsersIndexRoute: AuthenticatedUsersIndexRoute,
 }

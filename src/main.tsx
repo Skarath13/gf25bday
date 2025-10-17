@@ -95,6 +95,7 @@ if (!rootElement.innerHTML) {
           <FontProvider>
             <DirectionProvider>
               <RouterProvider router={router} />
+              {/* DevTools removed - no floating indicators */}
             </DirectionProvider>
           </FontProvider>
         </ThemeProvider>
